@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "socialShare",
+      "public": "dist/socialShare",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

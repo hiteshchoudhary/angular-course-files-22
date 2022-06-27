@@ -1,0 +1,16 @@
+<div class='mt-2 mb-1 card'>
+
+  <img top height='200' width='100%' [src]='product?.smallImage' alt='Card image cap' />
+
+  <div class='card-body text-center'>
+
+    <div class="card-title">{{product?.productName}}</div>
+
+    <div class="card-text" color='secondary'>price: rs {{product?.productPrice}}</div>
+
+    <button class='btn btn-primary' (click)='handleBuyNow(product)'>
+      Buy Now
+    </button>
+
+  </div>
+</div>

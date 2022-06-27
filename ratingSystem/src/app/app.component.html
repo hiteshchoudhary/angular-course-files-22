@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="card card-body text-center p-4">
+
+    <!-- stars icons onclick  -->
+    <div>
+      <fa-icon (click)='setSelectedStar(1)' [icon]="faStar" size="6x" [classes]="['text-warning']"></fa-icon>
+      <fa-icon (click)='setSelectedStar(2)' [icon]="faStar" size="6x" [classes]="['text-warning']"></fa-icon>
+      <fa-icon (click)='setSelectedStar(3)' [icon]="faStar" size="6x" [classes]="['text-warning']"></fa-icon>
+      <fa-icon (click)='setSelectedStar(4)' [icon]="faStar" size="6x" [classes]="['text-warning']"></fa-icon>
+      <fa-icon (click)='setSelectedStar(5)' [icon]="faStar" size="6x" [classes]="['text-warning']"></fa-icon>
+    </div>
+
+    <!-- ngSwitch to render compliment -->
+    <!-- todo change other compliment to some more user friendly -->
+    <h1 class='text-uppercase text-primary mt-4 mb-2' [ngSwitch]="selectedStar">
+      <div *ngSwitchCase="1">Sorry to hear</div>
+      <div *ngSwitchCase="2">2 star compliment</div>
+      <div *ngSwitchCase="3">3 star compliment</div>
+      <div *ngSwitchCase="4">4 star compliment</div>
+      <div *ngSwitchCase="5">Thanks for your support</div>
+      <div *ngSwitchDefault>Select your rating from above</div>
+    </h1>
+  </div>
+
+</div>
+
+<!-- to show compliment onHover of the star -->
+<!-- mouseenter to use hover effect-->

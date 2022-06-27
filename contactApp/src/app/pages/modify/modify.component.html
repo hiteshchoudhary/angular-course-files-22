@@ -1,0 +1,90 @@
+<div class="main row  mt-5 mb-3">
+  <div class="col col-md-6">
+    <img src="../../../assets/bgc.png" alt="" class="img-fluid">
+  </div>
+  <div class="col col-6 ">
+
+    <div class="card">
+
+      <div class="card-header text-large text-uppercase text-center">
+        <div *ngIf="id;else updateRender"> Update Contact
+        </div>
+        <ng-template #updateRender> Add Contact
+        </ng-template>
+      </div>
+
+
+      <form class="card-body" (ngSubmit)="onSubmit()">
+
+        <div class="text-center">
+
+          <label for='imagepicker' class=''>
+            <img [src]="picture" alt='' class='profile' />
+          </label>
+
+          <input type='file' name='image' id='imagepicker' accept='image/*' multiple={false}
+            (change)="uploadFile($event)" class='hidden' hidden />
+
+        </div>
+
+        <div class="text-info text-center" [hidden]="!uploadPercent || uploadPercent == 100">uploading
+          {{uploadPercent | number:'1.0-0'}} %
+          of 100% <br> Please wait a little... </div>
+        <div class="text-success text-uppercase text-center" *ngIf="uploadPercent == 100">
+          Upload finished
+        </div>
+
+
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" [(ngModel)]="name"
+            required />
+        </div>
+
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" name="email"
+            placeholder="Please provide one email of contact" name="first" [(ngModel)]="email" required />
+          <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input type="number" class="form-control" id="phoneNumber" name="phoneNumber"
+            placeholder="Please provide one phone number of contact" [(ngModel)]="phoneNumber" />
+        </div>
+
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea type="text" rows="2" class="form-control" id="address" name="address" [(ngModel)]="address" required
+            placeholder="Contact Address"></textarea>
+        </div>
+
+
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="favorite" name="favorite" [(ngModel)]="favorite"
+            checked='favorite' />
+          <label class="form-check-label" for="favorite">Favorite contact</label>
+        </div>
+
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">
+            <div *ngIf="id;else updateRender"> Update Contact
+            </div>
+            <ng-template #updateRender> Add Contact
+            </ng-template>
+          </button>
+        </div>
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,100 @@
+<div class="container ">
+  <div class="row mt-5 mb-3">
+    <div class="col col-6 offset-3">
+      <div class="card border-primary">
+
+        <div class="card-header text-center text-info text-uppercase">
+          Sign Up Please
+        </div>
+
+        <div class="card-body ">
+
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+            <div>
+              <!-- image picker -->
+              <div class="text-center">
+
+                <label for='imagepicker' class=''>
+                  <img [src]="picture" alt='' class='profile' />
+                </label>
+
+                <input type='file' name='image' id='imagepicker' accept='image/*' multiple={false}
+                  (change)="uploadFile($event)" class='hidden' hidden />
+
+              </div>
+
+              <div class="text-info text-center" [hidden]="!uploadPercent || uploadPercent == 100">uploading
+                {{uploadPercent | number:'1.0-0'}} %
+                of 100% <br> Please wait a little... </div>
+              <div class="text-success text-uppercase text-center mb-3" *ngIf="uploadPercent == 100">
+                Upload finished
+              </div>
+
+            </div>
+
+            <div class="form-group row">
+              <label for="email" class="col-sm-3 col-form-label">Name</label>
+              <div class="col-sm-9">
+                <input type="email" class="form-control" id="name" name="name" placeholder="Enter Name" ngModel
+                  required />
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label for="email" class="col-sm-3 col-form-label">Email</label>
+              <div class="col-sm-9">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" ngModel
+                  required />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="password" class="col-sm-3 col-form-label">Password</label>
+              <div class="col-sm-9">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
+                  ngModel required />
+                <small id="emailHelp" class="form-text text-muted">Minimum length of the password should be 6 or
+                  more</small>
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label for="email" class="col-sm-3 col-form-label">Instagram name</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="username" name="username"
+                  placeholder="Enter your handle of instagram" ngModel required />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="email" class="col-sm-3 col-form-label">Country</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="country" name="country" placeholder="Your Country" ngModel
+                  required />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="email" class="col-sm-3 col-form-label">bio</label>
+              <div class="col-sm-9">
+                <textarea type="text" class="form-control" id="bio" name="bio" placeholder="some bio about you" ngModel
+                  required></textarea>
+              </div>
+            </div>
+
+            <div class=" text-center">
+              <button class="btn btn-primary " type="submit" [disabled]="!f.form.valid">
+                Sign Up
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

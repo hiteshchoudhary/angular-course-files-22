@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <h1 class='text-uppercase text-primary text-center'>Buy Page</h1>
+  <div class="row">
+
+    <!-- list of product -->
+    <div class="col col-md-4" *ngFor="let product of products">
+      <app-cart-item [product]='product'></app-cart-item>
+    </div>
+
+  </div>
+</div>

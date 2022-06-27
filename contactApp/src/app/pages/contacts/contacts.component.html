@@ -1,0 +1,30 @@
+<div class="container mt-3 mb-4">
+
+  <div *ngIf="isLoading;else contactAvailable" class="text-center mt-5">
+    <div class="spinner-border text-primary" role="status">
+    </div>
+    <div class="text-primary">Loading...</div>
+  </div>
+
+
+
+  <ng-template #contactAvailable>
+    <h3 *ngIf="contacts.length == 0" class="text-uppercase text-info text-center mt-5">
+      No Contacts found Please add one to get started
+    </h3>
+    <ul *ngFor="let contact of contacts " class="list-group">
+      <li class="list-group-item">
+        <app-contact [contact]='contact'></app-contact>
+      </li>
+    </ul>
+  </ng-template>
+
+</div>
+
+
+<!--
+
+  to test
+{{contact | json}}
+
+-->

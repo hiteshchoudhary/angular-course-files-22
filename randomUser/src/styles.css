@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* for toast importing */
+@import "~ngx-toastr/toastr";
+
+/* reset */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./assets/background.jpg);
+}

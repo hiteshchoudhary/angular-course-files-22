@@ -1,0 +1,19 @@
+<ul *ngFor="let movie of movies" class="list-unstyled">
+
+  <li>
+    <div class="card text-center">
+      <div class="card-body">
+
+        <h4 class="card-title"> {{movie.name}}</h4>
+
+        <h6 class="card-subtitle mb-2 text-muted text-black-50"> Added on {{movie.date | date:'long'}}</h6>
+
+        <!-- open URL when View button is clicked -->
+        <a [href]='movie.url' target="_blank" class="card-link btn btn-outline-primary">View Movie </a>
+
+        <button class="card-link btn btn-outline-danger" (click)='handleDelete(movie)'>Delete</button>
+      </div>
+    </div>
+  </li>
+
+</ul>

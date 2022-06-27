@@ -1,0 +1,52 @@
+<div class="row">
+  <div class='col col-md-1 d-flex justify-content-center align-items-center'>
+
+    <div class='icon' (click)="updateFavorite()">
+
+      <!-- rendering dark star if the user is favorite else rendering the shallow star -->
+      <span class=' text-primary' *ngIf="contact.isFavorite ;else halfStar">
+        <fa-icon [icon]="faStar"></fa-icon>
+      </span>
+
+      <ng-template #halfStar>
+        <span class=' text-info'>
+          <fa-icon [icon]="faStarHalf"></fa-icon>
+        </span>
+      </ng-template>
+
+    </div>
+  </div>
+
+  <div class='col col-md-2 d-flex justify-content-center align-items-center'>
+    <img [src]='contact.picture' alt='' class='img-circle profile' />
+  </div>
+
+  <!-- contact data -->
+  <div class="col-md-7">
+    <div class='text-primary'>{{contact.name}}</div>
+
+    <div class='text-secondary'>{{contact.phoneNumber}}</div>
+    <div class='text-secondary'>{{contact.email}}</div>
+
+    <div class='text-info'>{{contact.address}}</div>
+  </div>
+
+
+  <!-- icons -->
+  <div class='col col-md-2 d-flex justify-content-around align-items-center'>
+
+    <!-- edit icons -->
+    <div color='danger' class='text-danger icon'>
+      <a [routerLink]="['/contact/modify']" [state]='{ id: contact.id ,contact: contact}'>
+        <fa-icon [icon]="faPen"></fa-icon>
+
+      </a>
+    </div>
+
+    <!-- delete icon -->
+    <div class='icon text-info '>
+      <fa-icon [icon]="faTrashAlt" (click)='deleteContact()'></fa-icon>
+    </div>
+  </div>
+
+</div>

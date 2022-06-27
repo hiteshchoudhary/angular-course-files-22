@@ -1,0 +1,36 @@
+<div class="container">
+
+  <form class="form-inline mt-4 d-flex justify-content-center" (ngSubmit)="handleFind()">
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <input type="text" id="userName" class="form-control mx-sm-3" aria-describedby="passwordHelpInline"
+        [(ngModel)]="userName" name="userName">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Find User</button>
+  </form>
+
+  <!-- to render error -->
+  <div *ngIf="Error" class="alert alert-danger m-5" role="alert">
+    {{
+      Error
+    }}
+  </div>
+  <div class="row mt-3">
+
+    <div class="col col-md-4">
+
+      <app-usercard *ngIf="user" [user]='user'></app-usercard>
+
+    </div>
+    <div class="col col-md-8">
+      <app-repos *ngIf="user" [repoUrl]='user.repos_url'></app-repos>
+    </div>
+  </div>
+</div>
+
+<!--
+to test
+{{user | json}}
+
+
+ -->

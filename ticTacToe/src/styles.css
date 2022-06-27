@@ -1,0 +1,16 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+@import "~ngx-toastr/toastr";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  background-image: url(./assets/bgc.jpg);
+}

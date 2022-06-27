@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+
+
+    <div class="col col-lg-6">
+      <div class="text-center">
+        <h1 class="uppercase text-danger" [hidden]='isCross'>
+          Player One Turn
+        </h1>
+        <h1 class="uppercase text-danger" [hidden]='!isCross'>
+          Player Two Turn
+        </h1>
+      </div>
+      <div class="grid">
+        <div *ngFor="let item of itemArray;index as i">
+          <div class="card">
+            <div class="card-body box" (click)='handleClick(i)'>
+              <app-icon [iconName]='item'></app-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- if game is over then rendering this -->
+
+    <div class="col col-6 text-center" *ngIf="winMessage">
+      <h1 class="text-uppercase">Game Over {{winMessage}}</h1>
+      <button class="btn btn-danger text-uppercase pl-5 pr-5" (click)='reloadGame()'>
+        Reload Game
+      </button>
+    </div>
+
+  </div>
+</div>

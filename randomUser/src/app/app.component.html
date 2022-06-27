@@ -1,0 +1,23 @@
+<div class="app p-4 container-fluid">
+  <div class="row">
+    <div class="col col-md-4 mt-4 offset-md-4">
+      <div class="text-center">
+        <!-- ng if else using -->
+        <app-cart [user]='user' *ngIf="user ; else loadingBlock"></app-cart>
+
+        <!-- when loading it will show -->
+        <ng-template #loadingBlock>
+          <!-- loading content spinner -->
+          <div class="text-center">
+            <div class="spinner-border spinner-grow-mg  text-white" role="status"></div>
+            <div class="text-white">
+              loading...
+            </div>
+          </div>
+        </ng-template>
+
+
+      </div>
+    </div>
+  </div>
+</div>

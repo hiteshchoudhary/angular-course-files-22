@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit()" class="text-center">
+
+  <input type="text" class="form-control mb-2" placeholder="Awesome Movie Name" name='movieName'
+    [(ngModel)]="movieName">
+  <input type="url" class="form-control mb-2" placeholder="Movie Url" name='movieUrl' [(ngModel)]="movieUrl">
+
+  <button class="btn btn-info  btn-block " type='submit'>{{
+    'add Movie to list' | uppercase
+  }}</button>
+</form>

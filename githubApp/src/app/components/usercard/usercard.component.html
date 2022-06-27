@@ -1,0 +1,49 @@
+<div class="card user-card text-center">
+
+
+  <div class="background bg-info">
+    <img [src]="user.avatar_url" class="img-fluid rounded-circle profile-pic border-2 border-white">
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">{{
+      user.name}}</h5>
+    <p class="card-text">
+      {{
+        user.bio
+      }}
+    </p>
+    <p class="card-text">
+      <span class="text-muted">
+        company :-
+      </span> {{
+        user.company
+      }}
+    </p>
+    <p class="card-text">
+      <span class="text-muted">
+        followers :-
+      </span> {{
+        user.followers
+      }}
+    </p>
+    <p class="card-text">
+      <span class="text-muted">
+        following :-
+      </span> {{
+        user.following
+      }}
+    </p>
+    <p class="card-text">
+      <span class="text-muted">
+        repository count :-
+      </span> {{
+        user.public_repos
+      }}
+    </p>
+    <p class="card-text"><small class="text-muted">Last updated {{
+    user.updated_at |date:'short'
+    }} ago</small></p>
+  </div>
+
+</div>

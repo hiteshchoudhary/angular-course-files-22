@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div *ngIf="isLoading;else Content" class="d-flex justify-content-center align-items-center  min-vh-100 ">
+    <div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
+    </div>
+  </div>
+
+  <ng-template #Content>
+    <div class="row m-5">
+      <div class="col col-md-7 ">
+        <!-- will render list of post here -->
+        <div *ngFor="let post of posts">
+
+          <app-post [post]='post'></app-post>
+
+        </div>
+
+
+      </div>
+      <div class="col col-md-5">
+        <p class="text-muted text-uppercase text-center">Recent new User</p>
+        <div *ngFor="let user of users">
+          <app-user [user]='user'></app-user>
+        </div>
+
+      </div>
+    </div>
+  </ng-template>
+</div>

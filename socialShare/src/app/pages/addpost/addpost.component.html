@@ -1,0 +1,62 @@
+<div class="main row  mt-5 mb-3">
+
+  <div class="col col-6 ">
+
+    <div class="card border-primary">
+
+      <div class="card-header bg-secondary text-large text-white text-center">
+        {{"Add Your awesome Post"|uppercase}}
+      </div>
+
+
+      <form class="card-body" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label for="locationName">Location Name</label>
+          <input type="text" class="form-control" id="locationName" name="locationName" placeholder="Enter Name"
+            [(ngModel)]="locationName" required />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea type="text" rows="5" class="form-control" id="description" name="description"
+            [(ngModel)]="description" required placeholder="some description"></textarea>
+        </div>
+
+        <div class="text-center mb-4 mt-2">
+
+          <label for='imagepicker' class=''>
+            Add your awesome photo
+          </label>
+
+          <input type='file' name='image' id='imagepicker' accept='image/*' multiple={false}
+            (change)="uploadFile($event)" class="form-control-file" />
+          <div class="text-info text-center" [hidden]="!uploadPercent || uploadPercent == 100">uploading
+            {{uploadPercent | number:'1.0-0'}} %
+            of 100% <br> Please wait a little... </div>
+          <div class="text-success text-uppercase text-center" *ngIf="uploadPercent == 100">
+            Upload finished
+          </div>
+
+        </div>
+
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" [disabled]="!picture">
+            Submit Post
+          </button>
+        </div>
+
+      </form>
+
+
+    </div>
+
+  </div>
+  <div class="col col-md-6 mt-5">
+    <h3 *ngIf="picture" class="text-success text-center mt-5 text-uppercase">
+      Your Image
+    </h3>
+    <img *ngIf="picture" [src]="picture" alt='' class='img-fluid' />
+  </div>
+</div>

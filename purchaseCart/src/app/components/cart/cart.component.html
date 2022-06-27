@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <h1 class='text-uppercase text-primary text-center '>Your Cart</h1>
+
+
+  <div class="list-group" *ngFor="let item of cartItems">
+    <div class="list-group-item">
+      <div class="row">
+
+        <div class="col">
+          <img [src]='item.tinyImage' alt='' height='80' />
+        </div>
+
+        <div class='col text-center'>
+          <div class='text-primary'>{{item.productName}}</div>
+
+          <span>price:- {{item.productPrice}} </span>
+          <button class="btn btn-danger" (click)='handleRemove(item)'>
+            Remove
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- render the grand total component if their is any item in the cart otherwise rendering ng-template  -->
+  <div *ngIf="cartItems.length >= 1;else EmptyCart">
+    <div class='card mt-3  text-center'>
+      <div class='card-header text-uppercase text-success '>
+        Grand Total
+      </div>
+      <div class="card-body">
+        Your Cart Total of {{cartItems.length}} product = {{amount}}
+      </div>
+      <div class="card-footer">
+        <button class='btn btn-info' (click)='handleBuy()'>
+          Buy Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #EmptyCart>
+    <h1 class='text-center text-uppercase text-danger'>
+      Your Cart is empty
+    </h1>
+    <img src="../../../assets/cart.png" class="img-fluid mt-5">
+  </ng-template>
+
+
+</div>

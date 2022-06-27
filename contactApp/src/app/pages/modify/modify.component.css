@@ -1,0 +1,21 @@
+/* .main {
+  background-image: url(../../../assets/undraw_personal_info_0okl.svg.png);
+} */
+
+.profile {
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  width: 110px;
+  height: 110px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
