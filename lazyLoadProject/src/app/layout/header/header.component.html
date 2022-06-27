@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <a class="navbar-brand" [routerLink]="['/']">
+    <img src="../../../assets/img.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    LCO App
+  </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto text-white text-uppercase">
+      <a class="nav-item nav-link pl-2 pr-2" [routerLink]="['/']">Home</a>
+      <a class="nav-item nav-link pl-2 pr-2" [routerLink]="['/about']" routerLinkActive="active border-bottom">About
+        us</a>
+      <a class="nav-item nav-link pl-2 pr-2" [routerLink]="['/services']"
+        routerLinkActive="active border-bottom">Service</a>
+      <a class="nav-item nav-link pl-2 pr-2" [routerLink]="['/contact-us']"
+        routerLinkActive="active border-bottom">Contact
+        US</a>
+    </div>
+  </div>
+</nav>
